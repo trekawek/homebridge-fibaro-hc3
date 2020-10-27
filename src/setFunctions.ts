@@ -156,8 +156,8 @@ export class SetFunctions {
 		if (Math.abs(value - characteristic.value) >= 0.5) {
 			value = parseFloat((Math.round(value / 0.5) * 0.5).toFixed(1));
 			this.command("setOverrideSchedule", [
-				{"type":"thermostat","data":{"setpoints":[{"type":"Heating","unit":"C","value":value}],"mode":"Heat"}},
-				{"type":"Minutes","value": parseInt(this.platform.config.thermostattimeout) / 60 / 60},
+				{"type":"thermostat", "data":{"setpoints":[{"type":"Heating","unit":"C","value":value}], "mode":"Heat"}},
+				{"type":"Minutes", "value": parseInt(this.platform.config.thermostattimeout) / 60},
 				{}
 			], service, IDs, callback);
 		} else {
